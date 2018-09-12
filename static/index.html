@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example chat app</title>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="messageSend" /><button>Send</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(function() {
+        var socket = io();
+        $('form').submit(function() {
+          socket.emit('message', $('#messageSend').val());
+          $('#messageSend').val('');
+          return false;
+        });
+
+        socket.on('message', function(message) {
+          $('#messages').append($('<li>').text(message));
+        });
+      });
+    </script>
+  </body>
+</html>
