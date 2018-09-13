@@ -2,7 +2,7 @@
   "name": "express-messenger-demo",
   "version": "1.0.0",
   "description": "Demo app that allows two users to communicate",
-  "main": "app/main.js",
+  "main": "app/server.js",
   "scripts": {
     "build": "rm -rf node_modules && npm install",
     "start": "node app/main.js",
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "boom": "^7.2.0",
+    "bunyan": "^1.8.12",
     "config": "^2.0.1",
     "express": "^4.16.3",
     "socket.io": "^2.1.1"
