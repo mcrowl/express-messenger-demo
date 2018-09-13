@@ -1,17 +1,32 @@
 'use strict';
 
-let app = require('express')();
-let http = require('http').Server(app);
-let io = require('socket.io')(http);
-const path = require('path');
+const app = require('express')();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
+const userController = require('./controllers/randomUser');
+const chatAppController = require('./controllers/chatApp');
 
 const APP_PORT = process.env.PORT || 3000;
 
 
+app.use((req, res, next) => {
+  res.io = io;
+  next();
+});
+
 //default page
 app.get('/', (req, res) => {
 
-  res.sendFile(path.resolve(__dirname + '/../static/index.html'));
+  userController.getRandomUser(req, res);
+
+});
+
+app.get('/chat/:user', (req, res) => {
+
+  res.io.emit('message', `User ${req.params.user} has joined`);
+
+  chatAppController.getChatApp(req, res);
 
 });
 
@@ -23,15 +38,16 @@ app.get('/status', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('User connected');
+  console.log(`User ${socket.id} connected.`);
   socket.on('disconnect', () => {
-    console.log('User disconnected');
+    console.log(`User ${socket.id} disconnected.`);
   });
 
   socket.on('message', (message) => {
     console.log(`message: ${message}`);
     io.emit('message', message);
   });
+
 });
 
 
