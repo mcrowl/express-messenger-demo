@@ -11,6 +11,7 @@ This is an example app that allows two users to send messages back and forth. It
 * The chat app currently has no real user identification / security and any user can use any name they want by using the /chat/:user route.
 * Only one unit test was provided - enough to show unit test style, isolating / mocking functions, etc, but not full coverage of a file.
 * Error handling is nearly non-existent - due to time restriction ... there are probably bugs ;)
+* Integration / Acceptance tests were not built for this example app but would typically use: nock for integration, and nock / selenium for acceptance testing.
 
 ## Libraries / Stack
 ### App libraries used:
