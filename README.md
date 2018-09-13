@@ -10,6 +10,7 @@ This is an example app that allows two users to send messages back and forth. It
 * A default route of / is provided and auto-assigns (randomly) a username to each user.  (This does have a flaw in that random usernames can overlap...but I did not implement code to avoid collisions to save time on the assignment.)
 * The chat app currently has no real user identification / security and any user can use any name they want by using the /chat/:user route.
 * Only one unit test was provided - enough to show unit test style, isolating / mocking functions, etc, but not full coverage of a file.
+* Error handling is nearly non-existent - due to time restriction ... there are probably bugs ;)
 
 ## Libraries / Stack
 ### App libraries used:
