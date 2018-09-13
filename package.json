@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rm -rf node_modules && npm install",
     "start": "node app/main.js",
-    "nodemon": "node node_modules/nodemon/bin/nodemon.js"
+    "nodemon": "node node_modules/nodemon/bin/nodemon.js",
+    "lint": "gulp lint"
   },
   "author": "Mike Crowl",
   "license": "ISC",
@@ -17,6 +18,8 @@
     "socket.io": "^2.1.1"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^5.0.0",
     "nodemon": "^1.18.4"
   }
 }
