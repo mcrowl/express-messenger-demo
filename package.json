@@ -14,7 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "bunyan": "^1.8.12",
-    "config": "^2.0.1",
     "express": "^4.16.3",
     "socket.io": "^2.1.1"
   },
