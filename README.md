@@ -15,9 +15,9 @@ This is an example app that allows two users to send messages back and forth. It
 
 ## Libraries / Stack
 ### App libraries used:
-* Express.js
-* Socket.IO
-* Bunyan
+* Express.js - web app framework
+* Socket.IO - eventing / chat app framework
+* Bunyan - json logging
 ### Testing / build tools used
 * eslint - linting / checking js files for format and errors
 * gulp - task runner (only one example task was implemented for this app)
